@@ -8,8 +8,8 @@ import MySQLdb
 
 app = Flask(__name__)
 
-pas='m1Adgjmtps'
-dbName='MJ'
+pas=''
+dbName=''
 
 def getLeagues():
     conn = MySQLdb.connect(host='localhost', user='root', passwd=pas, db=dbName)
