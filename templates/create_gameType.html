@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleMj.css') }}">
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>個人戦の追加</h1>
+    <div class = "create">
+        <form method = "POST">
+            <div class = "gameInfo">
+                <label for="title">個人戦名</label>
+                <input type="text" name = "name">
+            </div>
+            <input type="submit" value = "追加" class = "add">
+        </form>
+    </div>
+</body>
+</html>

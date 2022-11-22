@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleMj.css') }}">
+</head>
+<body>
+    <h1>Test</h1>
+    <div class = "create">
+        <form method = "POST">
+            <div class = "gameInfo">
+                <label for="title">1位 チーム名</label>
+                <input type="text" name = "team1">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "player1">
+                <label for="title">得点</label>
+                <input type="text" name = "point1">
+            </div>
+            <div class = "gameInfo">
+                <label for="title">2位 チーム名</label>
+                <input type="text" name = "team2">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "player2">
+                <label for="title">得点</label>
+                <input type="text" name = "point2">
+            </div>
+            <div class = "gameInfo">
+                <label for="title">3位 チーム名</label>
+                <input type="text" name = "team3">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "player3">
+                <label for="title">得点</label>
+                <input type="text" name = "point3">
+            </div>
+            <div class = "gameInfo">
+                <label for="title">4位 チーム名</label>
+                <input type="text" name = "team4">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "player4">
+                <label for="title">得点</label>
+                <input type="text" name = "point4">
+            </div>
+            <input type="submit" value = "追加" class = "add">
+        </form>
+    </div>
+</body>
+</html>

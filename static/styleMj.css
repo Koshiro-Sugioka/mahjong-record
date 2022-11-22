@@ -1,0 +1,154 @@
+body {
+    font-family: serif;
+    background-color: rgba(40, 171, 40, 0.644);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    width: 1100px;
+    display: table;
+    margin: 0 auto;
+  }
+
+h1{
+  text-align: center;
+}
+
+a{
+  width: 200px;
+  height: 35px;
+  margin-left: 5px;
+  padding: 1px 3px;
+  text-align: center;
+  line-height: 45px;
+  font-weight: 600;
+  font-size: 125%;
+  color: #000000;;
+  background-color: #ffffff;
+  border: 2px solid #ecbd22;
+  border-radius: 2px;
+}
+
+header{
+  height: 50px;
+}
+
+
+a:hover {
+  color: #ffffff;
+  background-color:  #035002;
+}
+
+
+table{
+  background-color: #ffffffee;
+  font-weight: bold;
+  font-size: 120%;
+  text-align: center;
+}
+
+.block {
+  float: left;
+  margin: 0 5px;
+}
+
+.block h2{
+  width:fit-content;
+  padding: 0 5px;
+  margin-bottom: 5px;
+  background-color: #ffffffb8;;
+}
+
+.block td{
+  text-align: center;
+}
+
+
+.game-list{
+  display: table;
+  margin:0 auto;
+  width: 1000px;
+}
+
+.point{
+  text-align: right;
+
+}
+
+.score{
+  margin:20px auto;
+  display: table;
+}
+
+.score td{
+  padding: 2px 7px;
+}
+
+.score h2{
+  padding: 0 5px;
+  margin: 10px auto;
+  width:fit-content;
+  text-align: center;
+  background-color: #ffffff8d;
+}
+
+
+.score-player{
+  float: left;
+  margin: 0 20px;
+}
+
+.gameInfo label{
+  font-size: 120%;
+}
+
+.create-league label{
+  font-size: 80%;
+}
+
+.create {
+  padding: 10px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  display: table;
+  border: 3px solid #ecbd22;
+}
+
+.add {
+  float: right;
+  margin-top: 10px;
+}
+
+.add :hover{
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.league-select {
+  display: table;
+  margin: 20px auto;
+}
+
+.league-select h1{
+  font-size: 200%;
+}
+
+.league-select a{
+  font-size: 200%;
+  display: block;
+  padding: 5px 0;
+  margin-bottom: 20px;
+}
+
+
+.addNew a{
+  font-size: 150%;
+}
+
+.create p{
+  color: #ff0101;
+  font-weight: bold;
+  margin: 0 10px;
+  float:right;
+}
+
+

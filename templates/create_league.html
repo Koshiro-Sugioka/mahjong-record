@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleMj.css') }}">
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>新規リーグ</h1>
+    <div class = "create">
+        <form method = "POST">
+            <label for="title">リーグ名</label>
+            <input type="text" name = "league">
+            <div class = "create-league">
+                <label for="title">チーム名1</label>
+                <input type="text" name = "team1">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t1player1">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t1player2">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t1player3">
+            </div>
+            <div class = "create-league">
+                <label for="title">チーム名2</label>
+                <input type="text" name = "team2">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t2player1">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t2player2">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t2player3">
+            </div>
+            <div class = "create-league">
+                <label for="title">チーム名3</label>
+                <input type="text" name = "team3">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t3player1">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t3player2">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t3player3">
+            </div>
+            <div class = "create-league">
+                <label for="title">チーム名4</label>
+                <input type="text" name = "team4">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t4player1">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t4player2">
+                <label for="body">プレイヤー名</label>
+                <input type="text" name = "t4player3">
+            </div>
+            <input type="submit" value = "追加" class = "add">
+        </form>
+    </div>
+</body>
+</html>

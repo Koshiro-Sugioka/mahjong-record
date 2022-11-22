@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleMj.css') }}">
+</head>
+<body>    
+    <header>
+    </header>
+    <h1>麻雀!</h1>
+    <div class = "league-select">
+        <h1>リーグ戦</h1>
+        {% for league in leagueList %}
+        <a href="/score/{{league}}">{{ league }}</a>
+        {% endfor %}
+        <div class ="addNew">
+            <a href="/create/newLeague">リーグ戦を追加</a>
+        </div>
+    </div>
+    <div class = "league-select">
+        <h1>個人戦</h1>
+        {% for type in singleList %}
+        <a href="/score/single/{{type}}">{{type}}</a>
+        {% endfor %}
+        <div class ="addNew">
+            <a href="/create/newSingle">個人戦を追加</a>
+        </div>
+    </div>
+</body>
+</html>個人

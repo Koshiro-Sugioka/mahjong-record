@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleMj.css') }}">
+</head>
+<body>
+    <header>
+        <a href="/">Home</a>
+        <a href="/score/single/{{gameType}}">Show score</a>
+    </header>
+    {% for player in playersList %}
+    <a href="/games/single/{{gameType}}/{{player}}">{{ player }}</a>
+    {% endfor %}
+    <a href="/games/single/{{gameType}}">All</a>
+    <h1>{{gameType}}</h1>
+    <div class = "game-list">
+        {%  for game in gamesInfo %}
+        {% if game.player1 == playerName or game.player2 == playerName or game.player3 == playerName or game.player4 == playerName %}
+        <div class = "block">
+            <table border = "1">
+                <h2 class = "gameNumber">第{{game.name}}回戦</h2>
+                <tr>
+                    <th>順位</th>
+                    <th>プレイヤー名</th>
+                    <th>得点</th>
+                    <th>ポイント</th>
+                </tr>
+                <tr>
+                    <td>1位</td>
+                    <td>{{game.player1}}</td>
+                    <td>{{game.point1}}</td>
+                    <td>{{game.p1}}pt</td>
+                </tr>
+                <tr>
+                    <td>2位</td>
+                    <td>{{game.player2}}</td>
+                    <td>{{game.point2}}</td>
+                    <td>{{game.p2}}pt</td>
+                </tr>
+                <tr>
+                    <td>3位</td>
+                    <td>{{game.player3}}</td>
+                    <td>{{game.point3}}</td>
+                    <td>{{game.p3}}pt</td>
+                </tr>
+                <tr>
+                    <td>4位</td>
+                    <td>{{game.player4}}</td>
+                    <td>{{game.point4}}</td>
+                    <td>{{game.p4}}pt</td>
+                </tr>
+            </table>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>

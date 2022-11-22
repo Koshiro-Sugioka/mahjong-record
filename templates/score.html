@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleMj.css') }}">
+</head>
+<body>
+    <header>
+        <a href="/">Home</a>
+        <a href="/games/{{leagueName}}">Show games</a>
+        <a href="/create/{{leagueName}}">Add a game</a>
+    </header>
+    <h1>{{leagueName}}</h1>
+
+    <div class = "score-block">      
+        <div class = "score">
+            <table border = "1">
+                <h2>チーム順位</h2> 
+                <tr>
+                    <th>順位</th>
+                    <th>チーム名</th>
+                    <th>ポイント</th>
+                </tr>
+                {% for team in teams %}
+                <tr>
+                    <td>{{ loop.index }}位</td>
+                    <td>{{ team.name }}</td>
+                    <td>{{ team.point }}pt</td>
+                </tr>
+                {% endfor %} 
+            </table>               
+        </div>
+        <div class = "score">
+            <div class = "score-player">
+                <table border = "1">
+                    <h2>個人成績</h2> 
+                    <tr>
+                        <th>順位</th>
+                        <th>プレイヤー名</th>
+                        <th>ポイント</th>
+                        <th>出場回数</th>
+                    </tr>
+                    {% for player in players %}
+                    <tr>
+                        <td>{{ loop.index }}位</td>
+                        <td>{{ player.name }}</td>
+                        <td>{{ player.point }}pt</td>
+                        <td>{{ player.timesOfGame()}}回</td>
+                    </tr>
+                    {% endfor %} 
+                </table>  
+            </div>
+            <div class = "score-player">
+                <table border = "1">
+                    <h2>最高得点</h2> 
+                    <tr>
+                        <th>順位</th>
+                        <th>プレイヤー名</th>
+                        <th>得点</th>
+                    </tr>
+                    {% for player in playersMax %}
+                    <tr>
+                        <td>{{ loop.index }}位</td>
+                        <td>{{ player.name }}</td>
+                        <td>{{ player.pointMax }}点</td>
+                    </tr>
+                    {% endfor %} 
+                </table>  
+            </div>
+            <div class = "score-player">
+                <table border = "1">
+                    <h2>最低得点</h2> 
+                    <tr>
+                        <th>順位</th>
+                        <th>プレイヤー名</th>
+                        <th>得点</th>
+                    </tr>
+                    {% for player in playersAve %}
+                    <tr>
+                        <td>{{ loop.index }}位</td>
+                        <td>{{ player.name }}</td>
+                        <td>{{ player.pointMin }}</td>
+                    </tr>
+                    {% endfor %} 
+                </table>  
+            </div>
+        </div>
+        <div class = "score">
+            {% for team in teams %}
+            <table border = "1">
+                <h2>{{ team.name }}</h2> 
+                <tr>
+                    <th>プレイヤー名</th>
+                    <th>試合数</th>
+                    <th>ポイント</th>
+                    <th>平均順位</th>
+                    <th>1位</th>
+                    <th>2位</th>
+                    <th>3位</th>
+                    <th>4位</th>
+                    <th>トップ率</th>
+                    <th>ラス回避率</th>
+                    <th>ベストスコア</th>
+                </tr>
+                {% for player in players %}
+                {% if player.team == team.name %}
+                    <tr>
+                        <td>{{ player.name }}</td>
+                        <td>{{ player.timesOfGame() }}</td>
+                        <td>{{ player.point }}</td>
+                        <td>{{ player.averageOrder() }}</td>
+                        <td>{{ player.num1 }}</td>
+                        <td>{{ player.num2 }}</td>
+                        <td>{{ player.num3 }}</td>
+                        <td>{{ player.num4 }}</td>
+                        <td>{{ player.portionOfOrder(1) }}%</td>
+                        <td>{{ 100-player.portionOfOrder(4) }}%</td>
+                        <td>{{ player.pointMax }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %} 
+            </table> 
+            {% endfor  %}
+        </div>
+    </div>
+</body>
+</html>

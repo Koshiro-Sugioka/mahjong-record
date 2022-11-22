@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleMj.css') }}">
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>{{leagueName}}</h1>
+    <div class = "create">
+        <form method = "POST">
+            <div class = "gameInfo">
+                <label for="title">1位 チーム名</label>
+                <select name="team1">
+                    {% for team in teams %}
+                    <option value="{{team.name}}">{{team.name}}</option>
+                    {% endfor %}
+                </select>
+                <label for="body">プレイヤー名</label>
+                <select name="player1">
+                    {% for player in players %}
+                    <option value="{{player}}">{{player}}</option>
+                    {% endfor %}
+                </select>
+                <label for="title">得点</label>
+                <input type="number" name = "point1">
+            </div>
+            <div class = "gameInfo">
+                <label for="title">2位 チーム名</label>
+                <select name="team2">
+                    {% for team in teams %}
+                    <option value="{{team.name}}">{{team.name}}</option>
+                    {% endfor %}
+                </select>
+                <label for="body">プレイヤー名</label>
+                <select name="player2">
+                    {% for player in players %}
+                    <option value="{{player}}">{{player}}</option>
+                    {% endfor %}
+                </select>
+                <label for="title">得点</label>
+                <input type="number" name = "point2">
+            </div>
+            <div class = "gameInfo">
+                <label for="title">3位 チーム名</label>
+                <select name="team3">
+                    {% for team in teams %}
+                    <option value="{{team.name}}">{{team.name}}</option>
+                    {% endfor %}
+                </select>
+                <label for="body">プレイヤー名</label>
+                <select name="player3">
+                    {% for player in players %}
+                    <option value="{{player}}">{{player}}</option>
+                    {% endfor %}
+                </select>
+                <label for="title">得点</label>
+                <input type="number" name = "point3">
+            </div>
+            <div class = "gameInfo">
+                <label for="title">4位 チーム名</label>
+                <select name="team4">
+                    {% for team in teams %}
+                    <option value="{{team.name}}">{{team.name}}</option>
+                    {% endfor %}
+                </select>
+                <label for="body">プレイヤー名</label>
+                <select name="player4">
+                    {% for player in players %}
+                    <option value="{{player}}">{{player}}</option>
+                    {% endfor %}
+                </select>
+                <label for="title">得点</label>
+                <input type="number" name = "point4">
+            </div>
+            <input type="submit" value = "追加" class = "add">
+        </form>
+        {% if error == 1 %}
+        <p>＊得点に誤り</p>
+        {% endif %}
+    </div>
+</body>
+</html>
